@@ -30,6 +30,14 @@
     header { text-align:center; padding:80px 20px; background:linear-gradient(135deg, #fff,#f9f9f9); }
     header h1 { font-size:2.5rem; margin-bottom:10px; color: var(--accent); animation:fadeInDown .8s ease-out; }
     header p { font-size:1.2rem; margin-bottom:20px; animation:fadeInUp .8s ease-out; }
+
+    header .hero-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
     header .hero-btns a { margin:0 10px; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold; transition: background var(--transition), transform var(--transition); }
     header .hero-btns a.register { background: var(--accent); color: #fff; }
     header .hero-btns a.contact { background: #fff; color: var(--accent); border:2px solid var(--accent); }
@@ -50,6 +58,36 @@
     @keyframes fadeInDown { from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);} }
     @keyframes fadeInUp { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
     @media(max-width:600px){ nav ul{display:none;} nav .nav-btns{display:none;} header h1{font-size:2rem;} header p{font-size:1rem;} }
+
+    @media (max-width: 600px) {
+      /* Hero buttons stack & full-width */
+      header .hero-btns {
+        flex-direction: column;
+        gap: 8px;
+      }
+      header .hero-btns a {
+        width: 100%;
+        padding: 12px 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      /* Bottom CTA (“Course Page” / “Book a Free Demo”) stack & full-width */
+      .cta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+      .cta a {
+        width: 100%;
+        max-width: 300px;  /* optional max width */
+        padding: 14px 0;
+        text-align: center;
+      }
+    }
+
+    
   </style>
 </head>
 <body>
